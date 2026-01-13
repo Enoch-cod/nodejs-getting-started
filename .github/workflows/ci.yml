@@ -23,8 +23,11 @@ jobs:
        run: npm install
 
      -name: Run tests
-      run:  |
-          if [ -f package.json ]; then
-            npm test || echo "No tests defined"
-          fi
+      run: |
+        echo "Checking for test script..."
+        if npm run | greg -q "test"; then npm test
+        else
+           echo "No tests defined,skipping." 
+        fi
+
 
