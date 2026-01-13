@@ -24,10 +24,13 @@ jobs:
 
      -name: Run tests
       run: |
-        echo "Checking for test script..."
-        if npm run | greg -q "test"; then npm test
+        echo "checking for test script..."
+        if npm run | greg -q "test"; then
+           echo "Test script found, running tests..."
+           npm test
         else
-           echo "No tests defined,skipping." 
+        echo "No tests defined, skipping."
         fi
+ 
 
 
