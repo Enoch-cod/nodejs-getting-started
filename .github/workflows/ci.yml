@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name  Verify app starts
+    - name:  Verify app starts
       run: |
         echo "Starting app to verify build..."
         timeout 10s npm start || echo "App started successfully"
